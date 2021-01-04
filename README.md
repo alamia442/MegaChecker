@@ -71,4 +71,8 @@ All requirements are listed in 'requirements.txt'. If you want to talk a look ri
 
 
 
+<<<<<<< HEAD
 [Mega.nz]: <https://mega.nz/>
+=======
+[Mega.nz]: <https://mega.nz/>
+>>>>>>> 5bc99e352be71b53f80ccdedc33268698c50d04b
