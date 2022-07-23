@@ -30,9 +30,9 @@ def Credits_and_Version():
 def IndexSelector():
     global index_null, index_one, criteria
     print("\nPlease select the indexes! Default: 0 and 1 !")
-    index_null = input("\nPlease specify the first index (count from 0): ")
-    index_one = input("\nPlease specify the second index (count from 0): ")
-    criteria = input("\nPlease specify the criteria (like ':' or '|'): ")
+    index_null = 0
+    index_one = 1
+    criteria = ":"
 
 
 def checkAccount(account):
@@ -55,7 +55,7 @@ def checkAccount(account):
 
 def Threads():
     global numThreads
-    numThreads = input("Threads (Recommended 20 Threads): ")
+    numThreads = "5"
     freeze_support()
 
     pool = Pool(int(numThreads))
